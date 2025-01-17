@@ -1,7 +1,7 @@
 const { type } = require('os')
 const sequelize = require('../db')
 const {DataTypes, DATE, MEDIUMINT} = require('sequelize')
-const { model } = require('crypto-js')
+const { models } = require('crypto-js')
 
 const Users = sequelize.define('users',{
     id_user: {type: DataTypes.INTEGER, primaryKey:true, autoIncrement:true},

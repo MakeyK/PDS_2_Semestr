@@ -1,4 +1,4 @@
-const {Users, Passengers, Tickets, Trains, Schedules, Van, Stations} = require('../models/models')
+const {Schedules} = require('../models/models')
 const {Sequelize} = require('../db')
 const {QueryTypes} = require('sequelize')
 const sequelize = require('../db')

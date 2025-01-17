@@ -3,12 +3,16 @@ const router = new Router()
 const DBControllerUsers = require('../controllers/DBControllerUsers')
 const DBControllerPassengers = require('../controllers/DBControllerPassengers')
 const DBControllerSchedules = require('../controllers/DBControllerSchedules')
+const AuthController = require ('../controllers/AuthController')
 const DBControllerStations = require('../controllers/DBControllerStations')
 const DBControllerTrains = require('../controllers/DBControllerTrains')
 const DBControllerVans = require('../controllers/DBControllerVans')
 const DBControllerTickets = require('../controllers/DBCotrollerTickets')
 const db = require('../db')
 
+
+router.post('/reg', AuthController.registration)
+router.post('/login', AuthController.login)
 
 // Создание записей в таблицах
 router.post('/createuser', DBControllerUsers.createUsers)

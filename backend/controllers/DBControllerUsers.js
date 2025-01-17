@@ -1,4 +1,4 @@
-const {Users, Passengers, Tickets, Trains, Schedules, Van, Stations} = require('../models/models')
+const {Users} = require('../models/models')
 const {Sequelize} = require('../db')
 const {QueryTypes} = require('sequelize')
 const sequelize = require('../db')
@@ -10,12 +10,12 @@ class DBControllerUsers
     async createUsers(req, res, next)
     {
         try {
-            const {login, password, role} = req.body
+            const {login, password} = req.body
             if(!login||!password)
             {
                 return next(ApiError.badRequest("Введите полностью данные"))
             }
-            const createus = await Users.create({login, password, role})
+            const createus = await Users.create({login, password})
             return res.json({message: "Пользователь создан"})
         } catch (error) {
             next(ApiError.badRequest("Что-то пошло не так"))
