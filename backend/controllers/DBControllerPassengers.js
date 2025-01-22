@@ -11,6 +11,7 @@ class DBControllerUPassengers
     {
         try {
             const {first_name, last_name} = req.body
+            // console.log('bd', first_name, last_name)
             if(!first_name||!last_name)
             {
                 return next(ApiError.badRequest("Введите полностью данные"))

@@ -2,7 +2,7 @@ const express = require("express")
 require("dotenv").config()
 const sequelize = require("./db")
 const cors = require('cors')
-const routes_createDB = require('./routers/index')
+const DBRouter = require('./routers/index')
 
 
 const http = require('http')
@@ -18,7 +18,7 @@ app.use(function (req, res, next) {
   });
 app.use(cors())
 app.use(express.json())
-app.use('/mak', routes_createDB)
+app.use('/mak', DBRouter)
 
 const start = async () => {
     try{
